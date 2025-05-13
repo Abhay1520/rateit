@@ -3,4 +3,4 @@ djangorestframework>=3.14
 psycopg2-binary>=2.9  # PostgreSQL driver
 python-decouple>=3.8  # For using .env files
 django-cors-headers>=4.0  # For enabling CORS (useful if connecting to a frontend)
-
+djangorestframework-simplejwt
