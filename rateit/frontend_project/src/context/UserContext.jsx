@@ -46,13 +46,16 @@ export const UserProvider = ({ children }) => {
   }, []);
   
 
-  const login = async (userData) => {
+  const login = async (userData, callback) => {
     const { access, refresh } = userData;
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);
-
-    await fetchCurrentUser(access); // 🔥 Fetch and store full user info
+  
+    await fetchCurrentUser(access);
+  
+    if (callback) callback(); // <-- Notify when login is complete
   };
+  
 
   const logout = () => {
     localStorage.removeItem('access_token');
